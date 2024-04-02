@@ -15,7 +15,7 @@
         $pdo = new PDO('mysql:host=mysql;dbname=test', 'root', 'password');
        
         $pdo->exec("CREATE TABLE IF NOT EXISTS usuarios (id int AUTO_INCREMENT PRIMARY KEY, nome varchar(255), email varchar(255))");
-        $pdo->exec("insert into usuarios (id, nome, email) values (null,'teste','teste@gmail.com');");
+        $pdo->exec("insert into usuarios (id, nome, email) values (null,'felipe','felipe@gmail.com');");
         
         $stmt = $pdo->query('SELECT * FROM usuarios');
 
