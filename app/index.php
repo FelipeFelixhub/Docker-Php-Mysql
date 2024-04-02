@@ -13,7 +13,12 @@
         </tr>
         <?php
         $pdo = new PDO('mysql:host=mysql;dbname=test', 'root', 'password');
+       
+        $pdo->exec("CREATE TABLE IF NOT EXISTS usuarios (id int AUTO_INCREMENT PRIMARY KEY, nome varchar(255), email varchar(255))");
+        $pdo->exec("insert into usuarios (id, nome, email) values (null,'teste','teste@gmail.com');");
+        
         $stmt = $pdo->query('SELECT * FROM usuarios');
+
         while ($row = $stmt->fetch()) {
             echo "<tr><td>{$row['id']}</td><td>{$row['nome']}</td><td>{$row['email']}</td></tr>";
         }
